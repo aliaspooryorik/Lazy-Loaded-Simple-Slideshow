@@ -27,9 +27,9 @@ and the DOM is ready. You can also have custom HTML as a slide.
 ### Output
 	<div id="promo-home">
 		<div style="display: block; "><img src="assets/images/home/banners/banner-1.jpg" width="630" height="280" alt="Default image"></div>
-		<div style="display: none; "><img src="assets/images/home/banners/banner-2.jpg" alt="This is banner"></div>
 		<div style="display: none; "><a href="http://www.aliaspooryorik.com/"><img src="assets/images/home/banners/banner-3.jpg" alt="Banner with link"></a></div>
-		<div style="display: none; "><img src="assets/images/home/banners/banner-4.jpg" alt="Banner number 4"></div>
+		<div style="display: none; "><h1>Custom Slide</h1><p><strong>Slide with custom HTML in it.</strong></p><p>Morbi condimentum magna et nibh cursus vestibulum. In quis sem nec ante ultrices fringilla.</p></div>
+		<div style="display: none; "><img src="assets/images/home/banners/banner-3.jpg" alt="Banner with no link"></div>
 	</div>
 	<div id="promo-home-paging">
 		<a data-slide="0" style="cursor:pointer">1</a>
