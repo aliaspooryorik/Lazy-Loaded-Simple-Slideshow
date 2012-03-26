@@ -1,6 +1,6 @@
 # Lazy Loaded Simple Slideshow
 
-Yes, yet another jQuery slidesho plugin! I wrote this because I wanted a simple to 
+Yes, yet another jQuery slideshow plugin! I wrote this because I wanted a simple to 
 use slideshow which would only load the aditional images if Javascript is enabled 
 and the DOM is ready.
 
@@ -8,7 +8,7 @@ and the DOM is ready.
 
 ### Code
 	<div id="promo-home">
-		<div><img src="assets/images/home/banners/banner-1.jpg" width="630" height="280" alt="Default image" /></div>
+		<div><img src="assets/images/home/banners/banner-1.jpg" width="630" height="280" alt="Default image"></div>
 	</div>
 	<script type="application/javascript" src="assets/js/jquery.simpleslideshow.js"></script>
 	<script type="application/javascript">
@@ -49,9 +49,9 @@ You are free to use whatever CSS you like, but this may help you get started
 	
 ### optional arguments
 
-		$('#promo-home').simpleSlideshow( {
-			slideshowData: slideshowData, // an array of additional images
-			slideFadeSpeed: 2000, // the amount of time (in ms) it takes to fade between slides
-			slidePauseSpeed: 4000, // the amount of time (in ms) to show the slide for
-			paging: true // show paging controls
-		} );
+	$('#promo-home').simpleSlideshow( {
+		slideshowData: slideshowData, // an array of additional images
+		slideFadeSpeed: 2000, // the amount of time (in ms) it takes to fade between slides
+		slidePauseSpeed: 4000, // the amount of time (in ms) to show the slide for
+		paging: true // show paging controls
+	} );
