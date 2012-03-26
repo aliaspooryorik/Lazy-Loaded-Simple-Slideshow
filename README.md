@@ -6,7 +6,7 @@ and the DOM is ready.
 
 ## Usage
 
-## Code
+### Code
 	<div id="promo-home">
 		<div><img src="assets/images/home/banners/banner-1.jpg" width="630" height="280" alt="Default image" /></div>
 	</div>
@@ -46,3 +46,12 @@ You are free to use whatever CSS you like, but this may help you get started
 	#promo-home div {position:absolute; top:0; left:0; margin:0; padding:0; width:650px; height:300px; z-index: 11;}
 	#promo-home img {border:10px solid #FFF; box-shadow: 0px 0px 4px #8b8b8b;}
 	#promo-home-paging a {background-color:#d0d0d0; color:white; padding:5px; margin-right:5px;}
+	
+### optional arguments
+
+		$('#promo-home').simpleSlideshow( {
+			slideshowData: slideshowData, // an array of additional images
+			slideFadeSpeed: 2000, // the amount of time (in ms) it takes to fade between slides
+			slidePauseSpeed: 4000, // the amount of time (in ms) to show the slide for
+			paging: true // show paging controls
+		} );
