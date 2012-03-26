@@ -28,13 +28,18 @@
 			
 			// loop and append additional images
 			$.each(settings.slideshowData, function(ndx, el){
-				var banner = '<img src="' + el.src + '" alt="' +el.alt + '">';
-				if (el.href){
-					banner = '<a href="' + el.href + '">' + banner + '</a>';
+				if ($.isPlainObject(el)) {
+					var banner = '<img src="' + el.src + '" alt="' + el.alt + '">';
+					if (el.href) {
+						banner = '<a href="' + el.href + '">' + banner + '</a>';
+					}
+				} 
+				else {
+					var banner = el;
 				}
-				console.log(el.alt);
 				$placeholder = $('<div>').hide().append(banner);
 				$this.append($placeholder);
+				
 			});
 			
 			

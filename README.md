@@ -2,7 +2,7 @@
 
 Yes, yet another jQuery slideshow plugin! I wrote this because I wanted a simple to 
 use slideshow which would only load the aditional images if Javascript is enabled 
-and the DOM is ready.
+and the DOM is ready. You can also have custom HTML as a slide.
 
 ## Usage
 
@@ -14,9 +14,9 @@ and the DOM is ready.
 	<script type="application/javascript">
 	jQuery(function($){
 		var slideshowData = [
-			{"src":"assets/images/home/banners/banner-2.jpg", "alt":"This is banner"},
 			{"src":"assets/images/home/banners/banner-3.jpg", "alt":"Banner with link", href:"http://www.aliaspooryorik.com/"},
-			{"src":"assets/images/home/banners/banner-4.jpg", "alt":"Banner number 4"}
+			'<h1>Custom Slide</h1><p><strong>Slide with custom HTML in it.</strong></p><p>Morbi condimentum magna et nibh cursus vestibulum. In quis sem nec ante ultrices fringilla.</p>',
+			{"src":"assets/images/home/banners/banner-2.jpg", "alt":"Banner with no link"}		
 		];
 		$('#promo-home').simpleSlideshow( {
 			slideshowData: slideshowData
