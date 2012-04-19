@@ -85,12 +85,13 @@
 				this.pagerID = $this[0].id + '-paging';
 				if (this.options.paging) {
 					$pager = $('<div>').attr('id', this.pagerID);
+					var context = this;
 					this.$slides.each(function(ndx){
 						var slideIndex = ndx + 1;
 						$('<a data-slide=' + ndx + '>' + slideIndex + '</a>').attr({
 							style: 'cursor:pointer'
 						}).click(function(){
-							
+							context.changeSlide( slideIndex, true );
 						}).appendTo($pager);
 					});
 					$this.after($pager.show());
@@ -121,14 +122,21 @@
 			);
 		},
 		
-		changeSlide : function( slideOrdinal ){
-			slideOrdinal = slideOrdinal || this.currentSlide; // set default for optional argument
+		changeSlide : function( slideOrdinal, pause ){ // the slide you want, stop slideshow?
+			console.log('==============');
+			slideOrdinal = slideOrdinal || this.currentSlide+1; // set default for optional argument
+			pause = pause || false; // set default for optional argument
 			
-			this.currentSlide = slideOrdinal+1 > this.$slides.length ? 1 : slideOrdinal + 1;
-			var context = this;
-			this.$slides.siblings().filter(':visible').fadeOut(this.options.slideFadeSpeed).end().eq(this.currentSlide - 1).fadeIn(this.options.slideFadeSpeed, function(){
-				$('#'+context.pagerID+'>a').removeClass('current-slide').eq(context.currentSlide-1).addClass('current-slide');
-			});
+			if (slideOrdinal !== this.currentSlide) {
+				this.currentSlide = slideOrdinal > this.$slides.length ? 1 : slideOrdinal;
+				console.log(this.currentSlide);
+				var context = this;
+
+				this.$slides.siblings().filter(':visible').fadeOut(this.options.slideFadeSpeed).end().eq(this.currentSlide - 1).fadeIn(this.options.slideFadeSpeed, function(){
+					$('#' + context.pagerID + '>a').removeClass('current-slide').eq(context.currentSlide - 1).addClass('current-slide');
+				});
+			}
+			if (pause) this.stop();
 		},
 		
 		stop : function( ){
@@ -139,8 +147,6 @@
 	
 	// API	
 	var methods = {
-		
-		
 
 	};
 	
