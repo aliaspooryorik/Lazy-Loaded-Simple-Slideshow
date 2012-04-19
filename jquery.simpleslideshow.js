@@ -123,17 +123,16 @@
 		},
 		
 		changeSlide : function( slideOrdinal, pause ){ // the slide you want, stop slideshow?
-			console.log('==============');
 			slideOrdinal = slideOrdinal || this.currentSlide+1; // set default for optional argument
 			pause = pause || false; // set default for optional argument
 			
 			if (slideOrdinal !== this.currentSlide) {
 				this.currentSlide = slideOrdinal > this.$slides.length ? 1 : slideOrdinal;
-				console.log(this.currentSlide);
 				var context = this;
 
+				$('#' + context.pagerID + '>a').removeClass('current-slide').eq(context.currentSlide - 1).addClass('current-slide');
 				this.$slides.siblings().filter(':visible').fadeOut(this.options.slideFadeSpeed).end().eq(this.currentSlide - 1).fadeIn(this.options.slideFadeSpeed, function(){
-					$('#' + context.pagerID + '>a').removeClass('current-slide').eq(context.currentSlide - 1).addClass('current-slide');
+					//$('#' + context.pagerID + '>a').removeClass('current-slide').eq(context.currentSlide - 1).addClass('current-slide');
 				});
 			}
 			if (pause) this.stop();
