@@ -96,18 +96,6 @@
 					$this.after($pager.show());
 					$pager.find('a:eq(0)').addClass('current-slide');
 				}
-				
-				// a really simple function to animate banners
-				//var slideOrdinal = 1;
-				
-				/*
-				changeSlide = function(){
-					slideOrdinal = slideOrdinal === $slideshow.length ? 1 : slideOrdinal + 1;
-					$slideshow.siblings().filter(':visible').fadeOut(this.options.slideFadeSpeed).end().eq(slideOrdinal - 1).fadeIn(this.options.slideFadeSpeed);
-					$('#'+pagerID+'>a').removeClass('current-slide').eq(slideOrdinal-1).addClass('current-slide');
-				};
-				*/
-				
 
 			}
 			
