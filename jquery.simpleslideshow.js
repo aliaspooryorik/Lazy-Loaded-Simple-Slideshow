@@ -47,8 +47,9 @@
 			var $slideshow = $this.find('div');
 			
 			// paging
+			var pagerID = $this[0].id + '-paging';
 			if (settings.paging) {
-				$pager = $('<div>').attr('id', $this[0].id + '-paging');
+				$pager = $('<div>').attr('id', pagerID);
 				$slideshow.each(function(ndx){
 					var slideIndex = ndx + 1;
 					$('<a data-slide=' + ndx + '>' + slideIndex + '</a>').attr({
@@ -59,6 +60,7 @@
 					}).appendTo($pager);
 				});
 				$this.after($pager.show());
+				$pager.find('a:eq(0)').addClass('current-slide');
 			}
 			
 			// a really simple function to animate banners
@@ -66,6 +68,7 @@
 			changeSlide = function(){
 				slideOrdinal = slideOrdinal === $slideshow.length ? 1 : slideOrdinal + 1;
 				$slideshow.siblings().filter(':visible').fadeOut(settings.slideFadeSpeed).end().eq(slideOrdinal - 1).fadeIn(settings.slideFadeSpeed);
+				$('#'+pagerID+'>a').removeClass('current-slide').eq(slideOrdinal-1).addClass('current-slide');
 			};
 			
 			// wait before firing
