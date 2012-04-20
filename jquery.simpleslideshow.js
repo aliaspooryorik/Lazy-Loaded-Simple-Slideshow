@@ -74,7 +74,6 @@
 					}
 					$placeholder = $('<div>').hide().append(banner);
 					$this.append($placeholder);
-					
 				});
 				
 				
