@@ -25,6 +25,7 @@ and the DOM is ready. You can also have custom HTML as a slide.
 	</script>
 	
 ### The code above will create this HTML
+
 	<div id="promo-home">
 		<div style="display: block; "><img src="assets/images/home/banners/banner-1.jpg" width="630" height="280" alt="Default image"></div>
 		<div style="display: none; "><img src="assets/images/home/banners/banner-2.jpg" alt="Banner 2"></div>
@@ -60,21 +61,21 @@ The simpleSlideshow plugin accepts four arguments which are shown below (with th
 
 You can also power the slideshow using JSON. For example:
 
-<div id="promo-home">
-	<div><img src="assets/images/home/banners/banner-1.jpg" width="630" height="280" alt="Default image"></div>
-</div>
-
-
-<script type="application/javascript" src="assets/js/jquery.simpleslideshow.js"></script>
-<script type="application/javascript">
-jQuery(function($){
-	// this JSON could come from an AJAX call
-	var slideshowData = [
-		{"src":"assets/images/banner-2.jpg", "alt":"banner 2"},
-		{"src":"assets/images/banner-3.jpg", "alt":"banner 3", "href":"http://www.aliaspooryorik.com/"}
-	];
-	$('#promo-home').simpleSlideshow( {
-		slideshowData: slideshowData
-	} );
-});
-</script>
+	<div id="promo-home">
+		<div><img src="assets/images/home/banners/banner-1.jpg" width="630" height="280" alt="Default image"></div>
+	</div>
+	
+	
+	<script type="application/javascript" src="assets/js/jquery.simpleslideshow.js"></script>
+	<script type="application/javascript">
+	jQuery(function($){
+		// this JSON could come from an AJAX call
+		var slideshowData = [
+			{"src":"assets/images/banner-2.jpg", "alt":"banner 2"},
+			{"src":"assets/images/banner-3.jpg", "alt":"banner 3", "href":"http://www.aliaspooryorik.com/"}
+		];
+		$('#promo-home').simpleSlideshow( {
+			slideshowData: slideshowData
+		} );
+	});
+	</script>
